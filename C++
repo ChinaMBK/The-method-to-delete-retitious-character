@@ -1,0 +1,25 @@
+//Method one : using interation to delete the repetitious charcter(including digit)
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int i , len , j;
+    string s;
+    getline(cin , s);
+    len = s.size();
+    for(i = 0 ; i < len ; i++ )
+    {
+        for( j = i + 1; j <= len ; j++)
+        {
+            if(s[i] == s[j])
+            {
+                s.erase(j,1);
+                j--;
+                len--; 
+            }
+        }
+    }
+    cout<< s << endl;
+    return 0;
+}
